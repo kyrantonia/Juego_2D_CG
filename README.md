@@ -4,5 +4,3 @@ Juego de plataformas basado en la mecánica del juego "Icy Tower", presentado co
 Utiliza los paquetes de Python "Pygame", "PyOpenGL" y "Pillow".
 
 Con cx_Freeze se creó el archivo ejecutable.
-
-Para ejecutar el juego es necesario bajar todos los archivos. Una vez hecho esto, se debe descomprimir lib.rar y guardar todos los archivos bajados y lib descomprimido en una misma carpeta. Finalmente, ejecutando Main.exe se podrá jugar.  

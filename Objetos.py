@@ -26,9 +26,9 @@ class Persona(Figura):
         #pl=Plataforma(Vector(0,0),Vector(0,0),posPla,a)
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT]:
-            self.acc.x = -Aceleración
+            self.acc.x = -Aceleracion
         if keys[pygame.K_RIGHT]:
-            self.acc.x = Aceleración
+            self.acc.x = Aceleracion
         ##aplicar roce en el eje x
         self.acc.x += self.vel.x * roce ##a=-b*v/m (roce aire)
         #ecuaciones movimiento en x

@@ -1,5 +1,5 @@
 
-titulo = "Titulo"
+titulo = "Icy_duck"
 ancho = 500
 altura = 600
 hpiso=20

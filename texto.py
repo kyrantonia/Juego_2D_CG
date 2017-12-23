@@ -3,7 +3,7 @@ from OpenGL.GLUT import *
 import pygame
 
 
-def draw_text(x, y, text, color=(255, 255, 255, 0), fondo=(255, 0, 0, 0), tamaño=64):
+def draw_text(x, y, text, color=(255, 255, 255, 0), fondo=(0, 0, 0, 0), tamaño=100):
     position = (x, y)
     font = pygame.font.Font(None, tamaño)
     text_surface = font.render(text, True, color, fondo)

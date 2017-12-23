@@ -5,18 +5,19 @@ import os
 from random import *
 from CC3501Utils import *
 #from Varias_Plataformas import*
-
+from texturas_opengl import *
 from pato import *
 from plataforma1 import*
 from plataforma_2 import*
 from plataforma3 import*
 from muros2 import *
+import sys
 
 os.environ['SDL_VIDEO_CENTERED'] = '1'  # centrar pantalla
 def main():
     n=0
     
-    init(ancho, altura, "titulo")
+    init(ancho, altura, titulo)
     pygame.mixer.music.load('musica.mp3')
     pygame.mixer.music.play(-1)
 
@@ -78,13 +79,11 @@ def main():
     for j in range(0, cantidad_de_plataformas):
         plataformas.append(Tipo_plataforma[randint(0,2)]( Vector(x[j], plataformas[j+1].pos.y+altura), anchos[j]))
 
-    run = True
-    while run:
-
-
+    #run = True
+    while pato.run:
         for event in pygame.event.get():
             if event.type == QUIT:  # cerrar ventana
-                run = False
+                pato.run = False
             if event.type == KEYDOWN:
                 if event.key == K_SPACE:
                     if pato.estoy == True:
@@ -142,7 +141,11 @@ def main():
 
         pygame.display.flip()  # actualizar pantalla
         pygame.time.wait(int(1000 / 30))  # ajusta a 30 fps
-
-
+    nombre_objeto = generarTex("pato2.jpg", True)
+    dibujarRectangulo(ancho, altura, 250,300, 0.0, nombre_objeto)
+    draw_text(8, 500, "DISQUALIFIED")
+    pygame.display.flip()
+    pygame.time.wait(2000)
     pygame.quit()
+    sys.exit()
 main()

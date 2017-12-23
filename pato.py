@@ -12,6 +12,7 @@ class Pato(Figura):
         self.vel = vel
         self.acc = acc
         self.estoy=False
+        self.run=True
         super().__init__(pos)
 
 
@@ -127,22 +128,10 @@ class Pato(Figura):
             self.pos.x = 60
             self.vel.x = -self.vel.x
 
-        if self.estoy==False and self.pos.y < 0:
-                glBegin(GL_QUADS)
-                glColor3f(255, 0, 0)
-                glVertex2f(0, altura)
-                glVertex2f(0, 0)
-                glVertex2f(ancho, 0)
-                glVertex2f(ancho, altura)
-                glEnd()
-
-
-                draw_text(100, 100, "DISQUALIFIED")
-                pygame.display.flip()
+        if self.estoy==False and self.pos.y < 0:##morir
                 end.play()
-                pygame.time.wait(2000)
+                self.run=False
 
-                quit()
 
         #choque plataforma
 
